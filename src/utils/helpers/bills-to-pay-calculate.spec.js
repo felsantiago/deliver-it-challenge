@@ -38,7 +38,7 @@ describe('Bills to pay calculate', () => {
     const numberOfDaysLateInvalid = -1;
     const originalValue = chance.floating({ min: 0, max: 1000, fixed: 2 });
 
-    const resultNull = sut.calculate(numberOfDaysLateInvalid, originalValue)
+    const resultNull = sut.calculate(numberOfDaysLateInvalid, originalValue);
     expect(resultNull).toBeNull();
   });
 });

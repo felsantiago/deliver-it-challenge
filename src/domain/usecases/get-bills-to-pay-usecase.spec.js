@@ -82,7 +82,9 @@ describe('Create bills to pay UseCase', () => {
     const { sut, getBillsToPayRepositoryEmptyListSpy } = makeSut();
     await sut.index();
 
-    expect(Array.isArray(getBillsToPayRepositoryEmptyListSpy.billsToPayments)).toBe(true);
+    expect(
+      Array.isArray(getBillsToPayRepositoryEmptyListSpy.billsToPayments)
+    ).toBe(true);
     expect(getBillsToPayRepositoryEmptyListSpy.billsToPayments).toHaveLength(0);
   });
 
@@ -93,7 +95,7 @@ describe('Create bills to pay UseCase', () => {
       new GetBillsToPayUseCase({}),
       new GetBillsToPayUseCase({
         getBillsToPayRepository: invalid,
-      }),
+      })
     );
     suts.forEach((sut) => {
       const promise = sut.index(body);
@@ -105,7 +107,7 @@ describe('Create bills to pay UseCase', () => {
     const suts = [].concat(
       new GetBillsToPayUseCase({
         getBillsToPayRepository: makeGetBillsToPayRepositoryWithError(),
-      }),
+      })
     );
     suts.forEach((sut) => {
       const promise = sut.index(body);

@@ -7,11 +7,11 @@ module.exports = class CreateBillsToPayComposer {
     const getBillsToPayRepository = new GetBillsToPayRepository();
 
     const getBillsToPayUseCase = new GetBillsToPayUseCase({
-      getBillsToPayRepository
+      getBillsToPayRepository,
     });
 
     return new GetBillsToPayRouter({
-      getBillsToPayUseCase
+      getBillsToPayUseCase,
     });
   }
 };
