@@ -28,6 +28,40 @@
 #### Arquivo Request (Insomnia)
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Deliver-IT-api&uri=https%3A%2F%2Fres.cloudinary.com%2Fdr05turuf%2Fraw%2Fupload%2Fv1611557109%2FInsomnia_2021-01-25-Deliver-IT_il33ql)
 
+## Rotas
+GET e POST: http://localhost:3000/api/bills-to-pay
+
+### Request body
+```
+{
+	"name": "Felipe Santiago",
+	"originalValue": 2050.40,
+	"dueDate": "2020-01-20",
+	"payDay": "2020-01-30"
+}
+```
+
+### Response body
+```
+{
+    "_id": "600f810978766300143f505d", // Id cadastrado
+    "name": "Felipe Santiago", // Nome
+    "originalValue": 2050.4, // Valor original
+    "dueDate": "2020-01-20", // Data de Vencimento
+    "payDay": "2020-01-30", // Data do Pagamento
+    "correctedValue": 2117.062, // Valor Corrigido
+    "numberOfDaysLate": 10, // Quantidade de dias de atraso
+    "delayRate": 5, // Multa
+    "interestDay": 0.3, // Juros/dia
+    "totalInterest": 61.662000000000006 // Juros total
+}
+```
+
+## **:scroll: Screen**
+Para testar disponibilizei arquivos do docker, utilize o comando `docker-compose up` na raiz desse projeto.
+
+- Irá criar uma instância do mongoDB e do Node no seu docker.
+
 ## **:scroll: Screen**
 ### Relatório de Testes
 ![image](https://res.cloudinary.com/dr05turuf/image/upload/v1611556186/testesDeliverIt_hhncom.png)

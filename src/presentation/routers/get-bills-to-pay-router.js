@@ -11,6 +11,7 @@ module.exports = class GetBillsToPayRouter {
 
       return HttpResponse.ok(billPayments);
     } catch (error) {
+      console.log(error);
       return HttpResponse.serverError();
     }
   }
