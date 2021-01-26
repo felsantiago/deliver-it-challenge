@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  challenge-deliver-it:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: felipe/challenge-deliver-it
+    container_name: challenge-deliver-it
+    restart: unless-stopped
+    environment:
+      NODE_ENV: development
+      MONGO_URL: mongodb://mongo:27017/deliverIt
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27018:27017'
