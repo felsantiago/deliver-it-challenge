@@ -1,0 +1,25 @@
+{
+  "name": "deliver-it-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Felipe Santiago",
+  "license": "ISC",
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "commitizen": "^4.2.3",
+    "git-commit-msg-linter": "^3.0.0",
+    "husky": "^4.0.0-beta.5",
+    "lint-staged": "^9.5.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
