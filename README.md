@@ -29,7 +29,7 @@
 [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Deliver-IT-api&uri=https%3A%2F%2Fres.cloudinary.com%2Fdr05turuf%2Fraw%2Fupload%2Fv1611557109%2FInsomnia_2021-01-25-Deliver-IT_il33ql)
 
 ## Rotas
-GET e POST: http://localhost:3000/api/bills-to-pay
+GET e POST: http://localhost:3003/api/bills-to-pay
 
 ### Request body
 ```
@@ -60,7 +60,7 @@ GET e POST: http://localhost:3000/api/bills-to-pay
 ## **:scroll: Screen**
 Para testar disponibilizei arquivos do docker, utilize o comando `docker-compose up` na raiz desse projeto.
 
-- Irá criar uma instância do mongoDB e do Node no seu docker.
+- Irá criar os containers da api, web e mongoDB no seu docker.
 
 ## **:scroll: Screen**
 ### Relatório de Testes

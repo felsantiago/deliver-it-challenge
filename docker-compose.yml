@@ -1,21 +1,32 @@
 version: '3'
 
 services:
-  challenge-deliver-it:
+  server:
     build:
-      context: .
-      dockerfile: Dockerfile
-    image: felipe/challenge-deliver-it
-    container_name: challenge-deliver-it
-    restart: unless-stopped
+      context: ./api
+    image: felipe/challenge-deliver-it-api
+    container_name: challenge-deliver-it-api
     environment:
       NODE_ENV: development
       MONGO_URL: mongodb://mongo:27017/deliverIt
-      PORT: 3000
+      PORT: 3003
     ports:
-      - "3000:3000"
+      - "3003:3003"
+    volumes:
+       - ./api:/usr/src/app/api
+       - /usr/src/app/api/node_modules
     links:
       - mongo
+  client:
+    build:
+      context: ./web
+    ports:
+      - "3000:3000"
+    container_name: challenge-deliver-it-web
+    stdin_open: true
+    volumes:
+       - ./web:/usr/src/app/web
+       - /usr/src/app/web/node_modules
   mongo:
     container_name: mongo
     image: mongo
